@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
 
 body {
   font-family: 'Syne Mono', monospace;
@@ -20,4 +20,61 @@ video {
   display: flex;
   align-items: center;
   justify-content: center;
+} */
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
+
+body {
+  font-family: 'Syne Mono', monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin: 80px 10px;
+}
+
+video {
+  width: 90vw;
+  height: auto;
+  margin: 2rem;
+  background: #2c3e50;
+}
+
+.videos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  video {
+    width: 70vw;
+  }
+}
+
+@media (min-width: 1024px) {
+  video {
+    width: 50vw;
+  }
+
+  .videos {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width: 1440px) {
+  video {
+    width: 40vw;
+    height: 30vw;
+  }
+
+  .videos {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
 }
