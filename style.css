@@ -26,7 +26,6 @@ video {
 
 
 
-
 @import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
 
 body {
@@ -79,4 +78,48 @@ video {
     flex-direction: row;
     flex-wrap: nowrap;
   }
+}
+
+/* Button styling */
+button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 10px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+button:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+}
+
+/* Input styling */
+input {
+  padding: 10px;
+  border: 1px solid #bdc3c7;
+  border-radius: 5px;
+  font-size: 16px;
+  margin: 10px;
+}
+
+h2 {
+  margin-top: 40px;
+}
+
+h3 {
+  margin: 20px 0;
+}
+
+span {
+  display: inline-block;
+  margin: 10px;
 }
