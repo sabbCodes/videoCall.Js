@@ -1,16 +1,17 @@
 import './style.css';
+require('dotenv').config();
 
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyD2ti0crKmyOXBo0WTHtTfqTD_MNodHSmg",
-  authDomain: "telehealthsol.firebaseapp.com",
-  projectId: "telehealthsol",
-  storageBucket: "telehealthsol.appspot.com",
-  messagingSenderId: "570298217776",
-  appId: "1:570298217776:web:8b59529234bcb51dff44f5",
-  measurementId: "G-PH5MCDTXWW"
+  apiKey: process.env.FIREBASE_API_KEY,
+  authDomain: process.env.AUTH_DOMAIN,
+  projectId: process.env.PROJECT_ID,
+  storageBucket: process.env.STORAGE_BUCKET,
+  messagingSenderId: process.env.MESSAGING_SENDER_ID,
+  appId: process.env.APP_ID,
+  measurementId: process.env.MEASUREMENT_ID
 };
 
 if (!firebase.apps.length) {
@@ -171,3 +172,13 @@ hangupButton.onclick = () => {
   console.log('Call ended');
 };
 
+
+
+//FIRESTORE RULES FOR PRODUCTION
+// service cloud.firestore {
+//   match /databases/{database}/documents {
+//     match /calls/{callId} {
+//       allow read, write: if request.auth != null;
+//     }
+//   }
+// }
